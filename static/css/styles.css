@@ -1277,7 +1277,7 @@ body.controls-visible .slide-counter {
     background: #fff;
     border-radius: 14px;
     border: 1px solid var(--color-border);
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
@@ -1415,9 +1415,7 @@ body.controls-visible .slide-counter {
 
 .analysis-tooltip {
     position: absolute;
-    bottom: 42px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 30px;
     background: #0f172a;
     color: #fff;
     padding: 6px 14px;
@@ -1427,7 +1425,7 @@ body.controls-visible .slide-counter {
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.25s ease, top 0.25s ease;
     z-index: 10;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
@@ -1442,6 +1440,7 @@ body.controls-visible .slide-counter {
     flex-direction: column;
     gap: 6px;
     justify-content: center;
+    padding-left: 8px;
 }
 
 .summary-item {
@@ -1452,6 +1451,7 @@ body.controls-visible .slide-counter {
     border-radius: 10px;
     background: var(--color-bg-alt);
     border: 2px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
     font-size: 13px;
     font-weight: 600;
     color: var(--color-text);
@@ -2004,9 +2004,27 @@ body.controls-visible .slide-counter {
     .analysis-card { padding: 10px 6px; }
     .analysis-card-title { font-size: 10px; }
     .analysis-card-text { font-size: 8px; }
+    .annotation-badge {
+        width: 16px;
+        height: 16px;
+        font-size: 7px;
+        left: -8px !important;
+    }
     .summary-item {
-        font-size: 12px;
-        padding: 10px 14px;
+        font-size: 11px;
+        padding: 8px 10px;
+        gap: 8px;
+    }
+    .summary-num {
+        width: 20px;
+        height: 20px;
+        font-size: 9px;
+    }
+    .summary-desc {
+        font-size: 9px;
+    }
+    .analysis-tooltip {
+        display: none;
     }
 
     .conclusion-headline {

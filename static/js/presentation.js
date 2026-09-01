@@ -197,6 +197,9 @@
 
         if (tooltip && index >= 0) {
             tooltip.textContent = analysisData[index].title + ' — ' + analysisData[index].desc;
+            var activeBadge = badges[index];
+            var badgeTop = activeBadge.offsetTop;
+            tooltip.style.top = badgeTop + 'px';
             tooltip.classList.add('visible');
         }
     }
