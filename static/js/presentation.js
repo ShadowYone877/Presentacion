@@ -14,6 +14,20 @@
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     const keyboardHint = document.getElementById('keyboardHint');
 
+    // Auto-hide controls
+    let controlsTimer = null;
+    function showControls() {
+        document.body.classList.add('controls-visible');
+        clearTimeout(controlsTimer);
+        controlsTimer = setTimeout(function () {
+            document.body.classList.remove('controls-visible');
+        }, 3000);
+    }
+
+    document.addEventListener('mousemove', showControls);
+    document.addEventListener('touchstart', showControls, { passive: true });
+    document.addEventListener('keydown', showControls);
+
     function updateUI() {
         progressFill.style.width = ((currentIndex + 1) / totalSlides * 100) + '%';
         currentSlideEl.textContent = String(currentIndex + 1).padStart(2, '0');
@@ -23,19 +37,6 @@
 
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex === totalSlides - 1;
-
-        const isDark = activeSlide.classList.contains('slide-dark');
-        if (isDark) {
-            progressFill.style.background = '#6366f1';
-            document.querySelector('.slide-counter').style.color = 'rgba(255,255,255,0.5)';
-            document.querySelector('.speaker-badge').style.borderColor = 'rgba(255,255,255,0.1)';
-            document.querySelector('.speaker-badge').style.background = 'rgba(255,255,255,0.08)';
-        } else {
-            progressFill.style.background = '#4f46e5';
-            document.querySelector('.slide-counter').style.color = 'rgba(255,255,255,0.5)';
-            document.querySelector('.speaker-badge').style.borderColor = 'rgba(255,255,255,0.1)';
-            document.querySelector('.speaker-badge').style.background = 'rgba(255,255,255,0.08)';
-        }
     }
 
     function animateSlideIn(index) {
@@ -155,6 +156,7 @@
     }, { passive: true });
 
     updateUI();
+    showControls();
 
     setTimeout(function () {
         if (keyboardHint) {
