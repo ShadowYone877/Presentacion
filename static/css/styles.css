@@ -54,9 +54,15 @@ html, body {
     transition: opacity 0.4s ease;
 }
 
-body:hover .progress-bar,
 body.controls-visible .progress-bar {
     opacity: 1;
+}
+
+/* Desktop: show on hover */
+@media (pointer: fine) {
+    body:hover .progress-bar {
+        opacity: 1;
+    }
 }
 
 .progress-fill {
@@ -94,9 +100,15 @@ body.controls-visible .progress-bar {
     opacity: 0;
 }
 
-body:hover .speaker-badge,
 body.controls-visible .speaker-badge {
     opacity: 1;
+}
+
+/* Desktop: show on hover */
+@media (pointer: fine) {
+    body:hover .speaker-badge {
+        opacity: 1;
+    }
 }
 
 .speaker-dot {
@@ -128,10 +140,17 @@ body.controls-visible .speaker-badge {
     pointer-events: none;
 }
 
-body:hover .nav-controls,
 body.controls-visible .nav-controls {
     opacity: 1;
     pointer-events: all;
+}
+
+/* Desktop: show on hover */
+@media (pointer: fine) {
+    body:hover .nav-controls {
+        opacity: 1;
+        pointer-events: all;
+    }
 }
 
 .nav-btn {
@@ -190,9 +209,15 @@ body.controls-visible .nav-controls {
     transition: opacity 0.4s ease;
 }
 
-body:hover .slide-counter,
 body.controls-visible .slide-counter {
     opacity: 1;
+}
+
+/* Desktop: show on hover */
+@media (pointer: fine) {
+    body:hover .slide-counter {
+        opacity: 1;
+    }
 }
 
 /* ============================================
