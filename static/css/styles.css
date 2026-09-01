@@ -1820,6 +1820,13 @@ body.controls-visible .slide-counter {
         height: 18px;
         font-size: 8px;
     }
+    .analysis-footer-mock {
+        gap: 12px;
+        padding: 10px;
+    }
+    .analysis-footer-mock span {
+        font-size: 9px;
+    }
 
     /* Conclusion */
     .conclusion-headline {
@@ -2022,7 +2029,13 @@ body.controls-visible .slide-counter {
         width: 16px;
         height: 16px;
         font-size: 7px;
-        left: -8px !important;
+    }
+    .analysis-footer-mock {
+        gap: 8px;
+        padding: 8px;
+    }
+    .analysis-footer-mock span {
+        font-size: 8px;
     }
     .summary-item {
         font-size: 11px;
