@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Visual Aplicado a la Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" id="slideCounter">
+        <span id="currentSlide">01</span> / <span id="totalSlides">{{ '%02d' | format(total_slides) }}</span>
+    </div>
+
+    <!-- Speaker Badge -->
+    <div class="speaker-badge" id="speakerBadge">
+        <div class="speaker-dot"></div>
+        <span id="speakerName">Integrante 1</span>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" aria-label="Anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="nav-btn" id="nextBtn" aria-label="Siguiente">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <button class="nav-btn fullscreen-btn" id="fullscreenBtn" aria-label="Pantalla completa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+        </button>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDES CONTAINER -->
+    <!-- ============================================ -->
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- ======== SLIDE 1: PORTADA ======== -->
+        <section class="slide active" id="slide-1" data-speaker="Integrante 1" data-speaker-num="1">
+            <div class="slide-content cover-slide">
+                <div class="cover-badge">
+                    <span>Diseño Visual</span>
+                </div>
+                <h1 class="cover-title">DISEÑO VISUAL<br>APLICADO A LA WEB</h1>
+                <p class="cover-subtitle">Principios para crear interfaces atractivas, claras y funcionales.</p>
+                <div class="cover-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Materia</span>
+                        <span class="meta-value">Desarrollo Web</span>
+                    </div>
+                    <div class="meta-divider"></div>
+                    <div class="meta-item">
+                        <span class="meta-label">Profesor</span>
+                        <span class="meta-value">Ing. Nombre</span>
+                    </div>
+                    <div class="meta-divider"></div>
+                    <div class="meta-item">
+                        <span class="meta-label">Integrantes</span>
+                        <span class="meta-value">5</span>
+                    </div>
+                    <div class="meta-divider"></div>
+                    <div class="meta-item">
+                        <span class="meta-label">Fecha</span>
+                        <span class="meta-value">Agosto 2026</span>
+                    </div>
+                </div>
+                <!-- Responsive Mockup -->
+                <div class="responsive-mockups">
+                    <div class="mockup mockup-desktop">
+                        <div class="mockup-bar"><div class="mockup-dots"><span></span><span></span><span></span></div></div>
+                        <div class="mockup-screen">
+                            <div class="mockup-nav"></div>
+                            <div class="mockup-hero"></div>
+                            <div class="mockup-cards">
+                                <div class="mockup-card"></div>
+                                <div class="mockup-card"></div>
+                                <div class="mockup-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup mockup-tablet">
+                        <div class="mockup-bar"><div class="mockup-dots"><span></span><span></span><span></span></div></div>
+                        <div class="mockup-screen">
+                            <div class="mockup-nav"></div>
+                            <div class="mockup-hero"></div>
+                            <div class="mockup-cards">
+                                <div class="mockup-card"></div>
+                                <div class="mockup-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup mockup-phone">
+                        <div class="mockup-bar"><div class="mockup-dots"><span></span><span></span><span></span></div></div>
+                        <div class="mockup-screen">
+                            <div class="mockup-nav"></div>
+                            <div class="mockup-hero"></div>
+                            <div class="mockup-cards">
+                                <div class="mockup-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 2: ¿QUÉ ES EL DISEÑO VISUAL WEB? ======== -->
+        <section class="slide" id="slide-2" data-speaker="Integrante 1" data-speaker-num="1">
+            <div class="slide-content">
+                <h2 class="slide-title">¿Qué es el diseño visual web?</h2>
+                <p class="slide-definition">Aplicación de principios gráficos y visuales en una interfaz digital para comunicar información de manera clara, atractiva y funcional.</p>
+                <div class="components-grid">
+                    <div class="component-item">
+                        <div class="component-icon" style="background: var(--color-primary);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <span class="component-name">Color</span>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-icon" style="background: var(--color-accent);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+                        </div>
+                        <span class="component-name">Tipografía</span>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-icon" style="background: var(--color-success);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                        </div>
+                        <span class="component-name">Composición</span>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-icon" style="background: var(--color-warning);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        </div>
+                        <span class="component-name">Imágenes</span>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-icon" style="background: var(--color-error);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span class="component-name">Jerarquía</span>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-icon" style="background: var(--color-info);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                        </div>
+                        <span class="component-name">Espacio</span>
+                    </div>
+                </div>
+                <div class="slide-quote">"El diseño visual no es decoración: es comunicación."</div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 3: OBJETIVO DEL DISEÑO VISUAL ======== -->
+        <section class="slide" id="slide-3" data-speaker="Integrante 1" data-speaker-num="1">
+            <div class="slide-content">
+                <h2 class="slide-title">El diseño debe guiar al usuario.</h2>
+                <div class="objective-cards">
+                    <div class="obj-card">
+                        <div class="obj-question">¿QUÉ ESTOY VIENDO?</div>
+                        <div class="obj-arrow">→</div>
+                        <div class="obj-answer obj-answer-understand">Comprender</div>
+                    </div>
+                    <div class="obj-card">
+                        <div class="obj-question">¿DÓNDE PUEDO IR?</div>
+                        <div class="obj-arrow">→</div>
+                        <div class="obj-answer obj-answer-navigate">Navegar</div>
+                    </div>
+                    <div class="obj-card">
+                        <div class="obj-question">¿QUÉ PUEDO HACER?</div>
+                        <div class="obj-arrow">→</div>
+                        <div class="obj-answer obj-answer-act">Actuar</div>
+                    </div>
+                    <div class="obj-card">
+                        <div class="obj-question">¿QUÉ MARCA ESTOY USANDO?</div>
+                        <div class="obj-arrow">→</div>
+                        <div class="obj-answer obj-answer-recognize">Reconocer</div>
+                    </div>
+                </div>
+                <div class="formula-display">
+                    <span class="formula-part formula-estetica">ESTÉTICA</span>
+                    <span class="formula-operator">+</span>
+                    <span class="formula-part formula-funcional">FUNCIONALIDAD</span>
+                    <span class="formula-operator">=</span>
+                    <span class="formula-part formula-resultado">BUENA EXPERIENCIA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 4: EL COLOR EN LA WEB ======== -->
+        <section class="slide" id="slide-4" data-speaker="Integrante 2" data-speaker-num="2">
+            <div class="slide-content">
+                <h2 class="slide-title">El color comunica.</h2>
+                <p class="slide-subtitle">"El color crea identidad, contraste, prioridad y significado."</p>
+                <div class="color-content">
+                    <div class="semantic-states">
+                        <div class="state-demo state-error">
+                            <div class="state-alert">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                <span>Error: No se pudo guardar</span>
+                            </div>
+                            <div class="state-badge badge-error">Error</div>
+                            <span class="state-label">Rojo — Error</span>
+                        </div>
+                        <div class="state-demo state-success">
+                            <div class="state-alert">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>Guardado exitosamente</span>
+                            </div>
+                            <div class="state-badge badge-success">Éxito</div>
+                            <span class="state-label">Verde — Éxito</span>
+                        </div>
+                        <div class="state-demo state-warning">
+                            <div class="state-alert">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                <span>Advertencia: Espacio bajo</span>
+                            </div>
+                            <div class="state-badge badge-warning">Alerta</div>
+                            <span class="state-label">Amarillo — Advertencia</span>
+                        </div>
+                        <div class="state-demo state-info">
+                            <div class="state-alert">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                <span>Nueva actualización disponible</span>
+                            </div>
+                            <div class="state-badge badge-info">Info</div>
+                            <span class="state-label">Azul — Información</span>
+                        </div>
+                    </div>
+                    <div class="palette-samples">
+                        <h3 class="palette-title">Paleta de Colores</h3>
+                        <div class="palette-row">
+                            <div class="palette-chip" style="background: #4f46e5;"><span>Principal</span></div>
+                            <div class="palette-chip" style="background: #2563eb;"><span>Secundario</span></div>
+                            <div class="palette-chip" style="background: #1e293b;"><span>Texto</span></div>
+                            <div class="palette-chip" style="background: #f8fafc; color: #1e293b;"><span>Fondo</span></div>
+                            <div class="palette-chip" style="background: #e2e8f0; color: #1e293b;"><span>Neutro</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-quote">"El color debe comunicar, no solamente decorar."</div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 5: TIPOGRAFÍA Y LEGIBILIDAD ======== -->
+        <section class="slide" id="slide-5" data-speaker="Integrante 2" data-speaker-num="2">
+            <div class="slide-content">
+                <h2 class="slide-title">La tipografía organiza la lectura.</h2>
+                <div class="typo-demo">
+                    <div class="typo-sample">
+                        <span class="typo-label">Título Principal</span>
+                        <span class="typo-display typo-h1">Extra Bold / XL</span>
+                    </div>
+                    <div class="typo-sample">
+                        <span class="typo-label">Subtítulo</span>
+                        <span class="typo-display typo-h2">Medium / L</span>
+                    </div>
+                    <div class="typo-sample">
+                        <span class="typo-label">Destacado</span>
+                        <span class="typo-display typo-accent">Bold / Color de acento</span>
+                    </div>
+                    <div class="typo-sample">
+                        <span class="typo-label">Texto principal</span>
+                        <span class="typo-display typo-body">Regular / M — El rápido zorro marrón salta sobre el perro perezoso.</span>
+                    </div>
+                    <div class="typo-sample">
+                        <span class="typo-label">Texto secundario</span>
+                        <span class="typo-display typo-small">Light / S — Texto de apoyo y descripciones complementarias.</span>
+                    </div>
+                </div>
+                <div class="typo-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">01</div>
+                        <span>Jerarquía</span>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">02</div>
+                        <span>Legibilidad</span>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">03</div>
+                        <span>Consistencia</span>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">04</div>
+                        <span>Contraste</span>
+                    </div>
+                </div>
+                <div class="slide-quote">"No todos los textos tienen la misma importancia."</div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 6: JERARQUÍA VISUAL ======== -->
+        <section class="slide" id="slide-6" data-speaker="Integrante 3" data-speaker-num="3">
+            <div class="slide-content">
+                <h2 class="slide-title">¿Qué ves primero?</h2>
+                <div class="hierarchy-mockup">
+                    <div class="banner-mockup">
+                        <div class="banner-nav">
+                            <div class="banner-logo">TiendaWeb</div>
+                            <div class="banner-links">
+                                <span>Inicio</span><span>Productos</span><span>Contacto</span>
+                            </div>
+                        </div>
+                        <div class="banner-content">
+                            <div class="banner-discount">50% DE DESCUENTO</div>
+                            <div class="banner-sub">Solo hasta el viernes.</div>
+                            <button class="banner-cta">COMPRAR AHORA</button>
+                        </div>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <div class="factor"><span class="factor-num">01</span> Tamaño</div>
+                        <div class="factor"><span class="factor-num">02</span> Contraste</div>
+                        <div class="factor"><span class="factor-num">03</span> Color</div>
+                        <div class="factor"><span class="factor-num">04</span> Posición</div>
+                        <div class="factor"><span class="factor-num">05</span> Espacio</div>
+                        <div class="factor"><span class="factor-num">06</span> Peso</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 7: COMPOSICIÓN Y ESPACIO ======== -->
+        <section class="slide" id="slide-7" data-speaker="Integrante 3" data-speaker-num="3">
+            <div class="slide-content">
+                <h2 class="slide-title">Composición = Orden visual.</h2>
+                <div class="composition-principles">
+                    <div class="comp-principle"><strong>Alineación</strong></div>
+                    <div class="comp-principle"><strong>Proximidad</strong></div>
+                    <div class="comp-principle"><strong>Espacio en Blanco</strong></div>
+                    <div class="comp-principle"><strong>Consistencia</strong></div>
+                </div>
+                <div class="split-comparison">
+                    <div class="split-side split-bad">
+                        <div class="split-label split-label-bad">Mal Diseño</div>
+                        <div class="ui-mockup ui-bad">
+                            <div class="ui-bad-nav">
+                                <span style="font-size:10px; margin-right:4px;">Inicio</span>
+                                <span style="font-size:14px; margin-right:2px;">Productos</span>
+                                <span style="font-size:11px;">Contacto</span>
+                            </div>
+                            <div class="ui-bad-content">
+                                <p style="font-size:9px; line-height:1.1; margin:0; color:#94a3b8;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <div style="display:flex; gap:2px; margin-top:3px;">
+                                    <div style="width:40px; height:25px; background:#cbd5e1;"></div>
+                                    <div style="width:30px; height:25px; background:#cbd5e1;"></div>
+                                </div>
+                                <div style="margin-top:4px; display:flex; gap:2px;">
+                                    <span style="font-size:8px; background:#cbd5e1; padding:2px 4px;">Botón</span>
+                                    <span style="font-size:8px; background:#cbd5e1; padding:2px 4px;">Otro</span>
+                                    <span style="font-size:8px; background:#cbd5e1; padding:2px 4px;">Más</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-side split-good">
+                        <div class="split-label split-label-good">Buen Diseño</div>
+                        <div class="ui-mockup ui-good">
+                            <div class="ui-good-nav">
+                                <span class="ui-good-logo">Tienda</span>
+                                <div class="ui-good-links"><span>Inicio</span><span>Productos</span><span>Contacto</span></div>
+                            </div>
+                            <div class="ui-good-content">
+                                <h4 style="margin:0; font-size:11px; font-weight:700; color:#0f172a;">Título claro</h4>
+                                <p style="font-size:8px; color:#64748b; margin:3px 0 0 0; line-height:1.3;">Texto descriptivo breve y conciso con espacio para respirar.</p>
+                                <button class="ui-good-btn">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-quote">"MÁS ELEMENTOS ≠ MEJOR DISEÑO"</div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 8: UX Y UI ======== -->
+        <section class="slide" id="slide-8" data-speaker="Integrante 4" data-speaker-num="4">
+            <div class="slide-content">
+                <h2 class="slide-title">UI y UX trabajan juntas.</h2>
+                <div class="ux-ui-content">
+                    <div class="matrix-compare">
+                        <div class="matrix-col matrix-ui">
+                            <h3 class="matrix-heading">UI</h3>
+                            <h4 class="matrix-subheading">User Interface</h4>
+                            <p class="matrix-question">¿Cómo se presenta?</p>
+                            <ul class="matrix-list">
+                                <li>Colores</li>
+                                <li>Botones</li>
+                                <li>Iconos</li>
+                                <li>Tipografía</li>
+                                <li>Formas</li>
+                            </ul>
+                        </div>
+                        <div class="matrix-col matrix-ux">
+                            <h3 class="matrix-heading">UX</h3>
+                            <h4 class="matrix-subheading">User Experience</h4>
+                            <p class="matrix-question">¿Cómo se utiliza?</p>
+                            <ul class="matrix-list">
+                                <li>Navegación</li>
+                                <li>Flujo</li>
+                                <li>Interacción</li>
+                                <li>Comprensión</li>
+                                <li>Accesibilidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="venn-diagram">
+                        <div class="venn-circle venn-ui">UI</div>
+                        <div class="venn-circle venn-ux">UX</div>
+                        <div class="venn-overlap">Producto<br>Efectivo</div>
+                    </div>
+                </div>
+                <div class="slide-quote">"Una interfaz bonita no siempre es una buena experiencia."</div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 9: RESPONSIVE Y ACCESIBILIDAD ======== -->
+        <section class="slide" id="slide-9" data-speaker="Integrante 4" data-speaker-num="4">
+            <div class="slide-content">
+                <h2 class="slide-title">Un diseño. Diferentes pantallas y usuarios.</h2>
+                <div class="responsive-content">
+                    <div class="responsive-demo">
+                        <div class="resp-device resp-desktop-device">
+                            <div class="resp-bar"><div class="resp-dot"></div><div class="resp-dot"></div><div class="resp-dot"></div></div>
+                            <div class="resp-screen">
+                                <div class="resp-nav-horizontal"><span></span><span></span><span></span><span></span></div>
+                                <div class="resp-grid-3"><div></div><div></div><div></div></div>
+                            </div>
+                        </div>
+                        <div class="resp-arrow">→</div>
+                        <div class="resp-device resp-mobile-device">
+                            <div class="resp-bar"><div class="resp-dot"></div><div class="resp-dot"></div><div class="resp-dot"></div></div>
+                            <div class="resp-screen">
+                                <div class="resp-nav-hamburger"><span></span><span></span><span></span></div>
+                                <div class="resp-grid-1"><div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accessibility-checks">
+                        <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Contraste AA/AAA</div>
+                        <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Legibilidad clara</div>
+                        <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Navegación clara</div>
+                        <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Hit targets táctiles</div>
+                        <div class="check-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Textos alternativos</div>
+                    </div>
+                </div>
+                <div class="slide-quote">"Responsive no significa hacer todo más pequeño; significa adaptar la experiencia."</div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 10: ANÁLISIS DE UNA INTERFAZ WEB ======== -->
+        <section class="slide" id="slide-10" data-speaker="Integrante 5" data-speaker-num="5">
+            <div class="slide-content">
+                <h2 class="slide-title">¿Cómo sabemos si un diseño funciona?</h2>
+                <div class="analysis-content">
+                    <div class="analysis-mockup">
+                        <div class="analysis-nav">
+                            <div class="analysis-logo">Brand</div>
+                            <div class="analysis-nav-links"><span>Home</span><span>About</span><span>Services</span><span>Contact</span></div>
+                            <button class="analysis-nav-cta">Sign Up</button>
+                        </div>
+                        <div class="analysis-hero">
+                            <h3>We Build Digital Experiences</h3>
+                            <p>Creating modern, accessible and beautiful web interfaces.</p>
+                            <button class="analysis-hero-btn">Get Started</button>
+                        </div>
+                        <div class="analysis-cards">
+                            <div class="analysis-card">
+                                <div class="analysis-card-icon" style="background:var(--color-primary);"></div>
+                                <span class="analysis-card-title">Design</span>
+                                <span class="analysis-card-text">Visual systems</span>
+                            </div>
+                            <div class="analysis-card">
+                                <div class="analysis-card-icon" style="background:var(--color-accent);"></div>
+                                <span class="analysis-card-title">Develop</span>
+                                <span class="analysis-card-text">Clean code</span>
+                            </div>
+                            <div class="analysis-card">
+                                <div class="analysis-card-icon" style="background:var(--color-success);"></div>
+                                <div class="analysis-card-title">Deploy</div>
+                                <span class="analysis-card-text">Fast hosting</span>
+                            </div>
+                        </div>
+                        <!-- Annotation Badges -->
+                        <div class="annotation-badge" style="top:8px; left:50%; transform:translateX(-50%);">01</div>
+                        <div class="annotation-badge" style="top:8px; left:70%;">02</div>
+                        <div class="annotation-badge" style="top:8px; right:12px;">03</div>
+                        <div class="annotation-badge" style="top:45px; left:12px;">04</div>
+                        <div class="annotation-badge" style="top:100px; left:50%; transform:translateX(-50%);">05</div>
+                        <div class="annotation-badge" style="bottom:12px; right:12px;">06</div>
+                        <div class="annotation-badge" style="bottom:12px; left:12px;">07</div>
+                    </div>
+                    <div class="analysis-summary">
+                        <div class="summary-item">Claridad</div>
+                        <div class="summary-item">Jerarquía</div>
+                        <div class="summary-item">Consistencia</div>
+                        <div class="summary-item">Legibilidad</div>
+                        <div class="summary-item">Accesibilidad</div>
+                        <div class="summary-item">Adaptabilidad</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SLIDE 11: CONCLUSIÓN ======== -->
+        <section class="slide slide-dark" id="slide-11" data-speaker="Integrante 5" data-speaker-num="5">
+            <div class="slide-content conclusion-slide">
+                <h2 class="conclusion-headline">UN BUEN DISEÑO WEB<br>NO SOLO SE VE BIEN.</h2>
+                <div class="conclusion-list">
+                    <div class="conclusion-item" data-delay="0">SE ENTIENDE.</div>
+                    <div class="conclusion-item" data-delay="1">SE UTILIZA.</div>
+                    <div class="conclusion-item" data-delay="2">SE ADAPTA.</div>
+                    <div class="conclusion-item" data-delay="3">COMUNICA.</div>
+                </div>
+                <div class="conclusion-formula">
+                    <span class="formula-part formula-estetica-dark">ESTÉTICA</span>
+                    <span class="formula-operator-dark">+</span>
+                    <span class="formula-part formula-funcional-dark">FUNCIONALIDAD</span>
+                    <span class="formula-operator-dark">+</span>
+                    <span class="formula-part formula-experiencia-dark">EXPERIENCIA</span>
+                    <span class="formula-operator-dark">=</span>
+                    <span class="formula-part formula-final-dark">DISEÑO EFECTIVO</span>
+                </div>
+                <div class="conclusion-thanks">
+                    <p>Gracias por su atención</p>
+                    <p class="conclusion-questions">¿Preguntas?</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint" id="keyboardHint">
+        Usa ← → o Espacio para navegar
+    </div>
+
+    <script src="{{ url_for('static', filename='js/presentation.js') }}"></script>
+</body>
+</html>
