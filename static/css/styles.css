@@ -343,7 +343,7 @@ body.controls-visible .slide-counter {
     align-items: flex-start;
     gap: 16px;
     margin-top: 20px;
-    max-width: 700px;
+    max-width: 550px;
 }
 
 .meta-item {
