@@ -339,19 +339,27 @@ body.controls-visible .slide-counter {
 
 .cover-meta {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
     margin-top: 20px;
+    max-width: 700px;
 }
 
 .meta-item {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-width: 120px;
+    flex: 1 1 auto;
+}
+
+.meta-item:last-child {
+    flex-basis: 100%;
 }
 
 .meta-label {
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--color-text-muted);
@@ -359,15 +367,18 @@ body.controls-visible .slide-counter {
 }
 
 .meta-value {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--color-text);
+    line-height: 1.4;
+    word-wrap: break-word;
 }
 
 .meta-divider {
     width: 1px;
     height: 30px;
     background: var(--color-border);
+    align-self: center;
 }
 
 /* Responsive Mockups */
@@ -1677,9 +1688,16 @@ body.controls-visible .slide-counter {
     .cover-meta {
         flex-wrap: wrap;
         gap: 12px;
+        max-width: 100%;
     }
     .meta-divider {
         display: none;
+    }
+    .meta-item {
+        min-width: 100px;
+    }
+    .meta-value {
+        font-size: 11px;
     }
     .responsive-mockups {
         position: relative;
@@ -1827,6 +1845,11 @@ body.controls-visible .slide-counter {
     .analysis-footer-mock span {
         font-size: 9px;
     }
+    .analysis-summary {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
 
     /* Conclusion */
     .conclusion-headline {
@@ -1883,6 +1906,15 @@ body.controls-visible .slide-counter {
     .cover-badge span {
         font-size: 10px;
         padding: 4px 12px;
+    }
+    .cover-meta {
+        gap: 8px;
+    }
+    .meta-item {
+        min-width: 100%;
+    }
+    .meta-value {
+        font-size: 10px;
     }
     .responsive-mockups {
         gap: 8px;
@@ -2036,6 +2068,9 @@ body.controls-visible .slide-counter {
     }
     .analysis-footer-mock span {
         font-size: 8px;
+    }
+    .analysis-summary {
+        grid-template-columns: 1fr;
     }
     .summary-item {
         font-size: 11px;
