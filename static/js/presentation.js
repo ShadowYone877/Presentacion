@@ -155,6 +155,75 @@
         }
     }, { passive: true });
 
+    // Slide 10: Interactive Analysis Badges
+    var analysisData = [
+        { title: 'Jerarquía', desc: 'Qué se ve primero y por qué.' },
+        { title: 'Tipografía', desc: 'Tamaños y pesos consistentes.' },
+        { title: 'Color', desc: 'Paleta coherente y contraste.' },
+        { title: 'Espacio', desc: 'Respiración entre elementos.' },
+        { title: 'CTA', desc: 'Acción clara y visible.' },
+        { title: 'Navegación', desc: 'Enlaces claros y accesibles.' },
+        { title: 'Consistencia', desc: 'Patrones repetidos y predecibles.' }
+    ];
+
+    var activeAnalysis = -1;
+    var tooltip = document.getElementById('analysisTooltip');
+
+    function setActiveAnalysis(index) {
+        var badges = document.querySelectorAll('#slide-10 .annotation-badge');
+        var items = document.querySelectorAll('#slide-10 .summary-item');
+
+        if (activeAnalysis === index) {
+            activeAnalysis = -1;
+            badges.forEach(function (b) { b.classList.remove('active', 'dimmed'); });
+            items.forEach(function (i) { i.classList.remove('active', 'dimmed'); });
+            if (tooltip) tooltip.classList.remove('visible');
+            return;
+        }
+
+        activeAnalysis = index;
+
+        badges.forEach(function (b, i) {
+            b.classList.remove('active', 'dimmed');
+            if (i === index) b.classList.add('active');
+            else b.classList.add('dimmed');
+        });
+
+        items.forEach(function (item, i) {
+            item.classList.remove('active', 'dimmed');
+            if (i === index) item.classList.add('active');
+            else item.classList.add('dimmed');
+        });
+
+        if (tooltip && index >= 0) {
+            tooltip.textContent = analysisData[index].title + ' — ' + analysisData[index].desc;
+            tooltip.classList.add('visible');
+        }
+    }
+
+    document.querySelectorAll('#slide-10 .annotation-badge').forEach(function (badge) {
+        badge.addEventListener('click', function () {
+            var idx = parseInt(badge.getAttribute('data-analysis'));
+            setActiveAnalysis(idx);
+        });
+    });
+
+    document.querySelectorAll('#slide-10 .summary-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+            var idx = parseInt(item.getAttribute('data-analysis'));
+            setActiveAnalysis(idx);
+        });
+    });
+
+    // Clear analysis selection when leaving slide 10
+    var origGoToSlide = goToSlide;
+    goToSlide = function (index) {
+        if (currentIndex === 10) {
+            setActiveAnalysis(-1);
+        }
+        origGoToSlide(index);
+    };
+
     updateUI();
     showControls();
 

@@ -490,21 +490,65 @@
                             </div>
                         </div>
                         <!-- Annotation Badges -->
-                        <div class="annotation-badge" style="top:8px; left:50%; transform:translateX(-50%);">01</div>
-                        <div class="annotation-badge" style="top:8px; left:70%;">02</div>
-                        <div class="annotation-badge" style="top:8px; right:12px;">03</div>
-                        <div class="annotation-badge" style="top:45px; left:12px;">04</div>
-                        <div class="annotation-badge" style="top:100px; left:50%; transform:translateX(-50%);">05</div>
-                        <div class="annotation-badge" style="bottom:12px; right:12px;">06</div>
-                        <div class="annotation-badge" style="bottom:12px; left:12px;">07</div>
+                        <div class="annotation-badge" data-analysis="0" style="top:8px; left:50%; transform:translateX(-50%);">01</div>
+                        <div class="annotation-badge" data-analysis="1" style="top:8px; left:70%;">02</div>
+                        <div class="annotation-badge" data-analysis="2" style="top:8px; right:12px;">03</div>
+                        <div class="annotation-badge" data-analysis="3" style="top:45px; left:12px;">04</div>
+                        <div class="annotation-badge" data-analysis="4" style="top:100px; left:50%; transform:translateX(-50%);">05</div>
+                        <div class="annotation-badge" data-analysis="5" style="bottom:12px; right:12px;">06</div>
+                        <div class="annotation-badge" data-analysis="6" style="bottom:12px; left:12px;">07</div>
+                        <div class="analysis-tooltip" id="analysisTooltip"></div>
                     </div>
                     <div class="analysis-summary">
-                        <div class="summary-item">Claridad</div>
-                        <div class="summary-item">Jerarquía</div>
-                        <div class="summary-item">Consistencia</div>
-                        <div class="summary-item">Legibilidad</div>
-                        <div class="summary-item">Accesibilidad</div>
-                        <div class="summary-item">Adaptabilidad</div>
+                        <div class="summary-item" data-analysis="0">
+                            <span class="summary-num">01</span>
+                            <div>
+                                <strong>Jerarquía</strong>
+                                <span class="summary-desc">Qué se ve primero y por qué.</span>
+                            </div>
+                        </div>
+                        <div class="summary-item" data-analysis="1">
+                            <span class="summary-num">02</span>
+                            <div>
+                                <strong>Tipografía</strong>
+                                <span class="summary-desc">Tamaños y pesos consistentes.</span>
+                            </div>
+                        </div>
+                        <div class="summary-item" data-analysis="2">
+                            <span class="summary-num">03</span>
+                            <div>
+                                <strong>Color</strong>
+                                <span class="summary-desc">Paleta coherente y contraste.</span>
+                            </div>
+                        </div>
+                        <div class="summary-item" data-analysis="3">
+                            <span class="summary-num">04</span>
+                            <div>
+                                <strong>Espacio</strong>
+                                <span class="summary-desc">Respiración entre elementos.</span>
+                            </div>
+                        </div>
+                        <div class="summary-item" data-analysis="4">
+                            <span class="summary-num">05</span>
+                            <div>
+                                <strong>CTA</strong>
+                                <span class="summary-desc">Acción clara y visible.</span>
+                            </div>
+                        </div>
+                        <div class="summary-item" data-analysis="5">
+                            <span class="summary-num">06</span>
+                            <div>
+                                <strong>Navegación</strong>
+                                <span class="summary-desc">Enlaces claros y accesibles.</span>
+                            </div>
+                        </div>
+                        <div class="summary-item" data-analysis="6">
+                            <span class="summary-num">07</span>
+                            <div>
+                                <strong>Consistencia</strong>
+                                <span class="summary-desc">Patrones repetidos y predecibles.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
